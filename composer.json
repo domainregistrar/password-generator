@@ -1,0 +1,28 @@
+{
+  "name": "domainregistrar/PasswordGen",
+  "type": "library",
+  "description": "Random Password Generator Library",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Dan Rodgers",
+      "email": "dan@drs.uk"
+    }
+  ],
+  "require": {
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "domainregistrar\\PasswordGenerator\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "domainregistrar\\PasswordGenerator\\": "tests"
+    }
+  }
+}
