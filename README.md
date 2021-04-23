@@ -13,7 +13,7 @@ You are able to specify if upper/lower case characters should be included, the n
 Install via `Composer` using the [Packagist archive](https://packagist.org/packages/domainregistrar/password-generator)
 
 ``` bash
-$ composer require domainregistrar/PasswordGenerator
+$ composer require domainregistrar/password-generator
 ```
 
 ## Basic usage
