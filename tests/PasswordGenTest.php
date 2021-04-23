@@ -62,4 +62,12 @@ class PasswordGenTest extends TestCase {
 
         $this->assertSame(strlen($pass), 238954);
     }
+
+    public function testDocs()
+    {
+        $obj = new PasswordGen();
+        $pass = $obj::generate(10, true, true, 2, 0);
+
+        echo $pass;
+    }
 }

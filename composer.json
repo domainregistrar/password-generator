@@ -1,5 +1,5 @@
 {
-  "name": "domainregistrar/PasswordGen",
+  "name": "domainregistrar/password-generator",
   "type": "library",
   "description": "Random Password Generator Library",
   "minimum-stability": "stable",
