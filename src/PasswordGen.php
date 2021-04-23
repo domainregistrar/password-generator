@@ -51,7 +51,7 @@ class PasswordGen
             $password_arr[] = $range[array_rand($range, 1)];
         }
 
-        // Individual to enable multiples of same special character & more special chars than there is in array
+        // Looping to enable multiples of same character also allows inclusion of more than 26 characters
         for($i = 0; $i < $requiredAlpha; $i++)
         {
             $rand_char = array_rand($chars, 1);
@@ -75,7 +75,7 @@ class PasswordGen
         $specialChars = ['@','%','!', '?', '*', '^', '&'];
         $return = [];
 
-        // Individual to enable multiples of same special character & more special chars than there is in array
+        // Looping to enable multiples of same special character also allows inclusion of more special characters than the number provided
         for($i = 0; $i < $len; $i++)
         {
             $rand_special_char = array_rand($specialChars, 1);
@@ -91,7 +91,7 @@ class PasswordGen
         $digits = range(0, 9);
         $return = [];
 
-        // Individual to enable multiples of same special character & more special chars than there is in array
+        // Looping to enable multiples of same digit
         for($i = 0; $i < $len; $i++)
         {
             $rand_digit = array_rand($digits, 1);
