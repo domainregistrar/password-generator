@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace domainregistrar\PasswordGenerator;
 
@@ -63,6 +64,39 @@ class PasswordGenTest extends TestCase {
         $this->assertSame(strlen($pass), 238954);
     }
 
+    public function testNonBoolAsUpper()
+    {
+        $this->expectException(\TypeError::class);
+
+        $obj = new PasswordGen();
+        $pass = $obj::generate(10, 'YES', true, 1, 0);
+
+        echo $pass;
+    }
+    public function testNonBoolAsLower()
+    {
+        $this->expectException(\TypeError::class);
+
+        $obj = new PasswordGen();
+        $pass = $obj::generate(10, true, 'YES', 1, 0);
+    }
+
+    public function testNonIntegerAsNumber()
+    {
+        $this->expectException(\TypeError::class);
+
+        $obj = new PasswordGen();
+        $pass = $obj::generate(10, true, true, 'one', 0);
+    }
+
+    public function testNonIntegerAsSpecial()
+    {
+        $this->expectException(\TypeError::class);
+
+        $obj = new PasswordGen();
+        $pass = $obj::generate(10, true, true, 1, 'two');
+    }
+
     public function testDocs()
     {
         $obj = new PasswordGen();
@@ -70,4 +104,5 @@ class PasswordGenTest extends TestCase {
 
         echo $pass;
     }
+
 }

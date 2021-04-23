@@ -3,14 +3,15 @@
   "type": "library",
   "description": "Random Password Generator Library",
   "minimum-stability": "stable",
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "Dan Rodgers",
-      "email": "dan@drs.uk"
+      "email": "development@drs.uk"
     }
   ],
   "require": {
+    "php": ">=7.4"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5"

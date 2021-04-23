@@ -1,10 +1,16 @@
-# PasswordGen
+# Password Generator
 
 PHP library for generating random passwords within given requirement parameters.
 
-## Install
+You are able to specify if upper/lower case characters should be included, the number of integers and special characters, and the total length required.
 
-Via Composer
+## Requirements 
+* PHP >= 7.4
+* phpunit/phpunit >= 9.5.*
+
+## Installation
+
+Install via `Composer` using the [Packagist archive](https://packagist.org/packages/domainregistrar/password-generator)
 
 ``` bash
 $ composer require domainregistrar/PasswordGenerator
@@ -12,7 +18,12 @@ $ composer require domainregistrar/PasswordGenerator
 
 ## Basic usage
 
-Generate password with length of 16 including upper & lower case letters, numbers and special characters.
+The generate method accepts 5 parameters:
+* total length of password
+* boolean to include Uppercase characters
+* boolean to include Lowercase characters
+* total numbers to include in the password
+* total special characters (`@%!?*^&`) to include in the password
 
 ``` php
 use domainregistrar\PasswordGenerator\PasswordGen;
