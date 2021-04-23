@@ -48,6 +48,7 @@ class PasswordGenTest extends TestCase {
 
         $this->assertMatchesRegularExpression('/[a-z]/', $pass);
     }
+
     public function testPasswordContainsAtLeastOneUpperChar()
     {
         $obj = new PasswordGen();
@@ -73,6 +74,7 @@ class PasswordGenTest extends TestCase {
 
         echo $pass;
     }
+
     public function testNonBoolAsLower()
     {
         $this->expectException(\TypeError::class);
@@ -96,13 +98,4 @@ class PasswordGenTest extends TestCase {
         $obj = new PasswordGen();
         $pass = $obj::generate(10, true, true, 1, 'two');
     }
-
-    public function testDocs()
-    {
-        $obj = new PasswordGen();
-        $pass = $obj::generate(10, true, true, 2, 0);
-
-        echo $pass;
-    }
-
 }

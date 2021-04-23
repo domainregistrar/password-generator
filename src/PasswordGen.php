@@ -70,6 +70,13 @@ class PasswordGen
     }
 
 
+    /**
+     * Generate array of special characters
+     *
+     * @param int $len
+     *
+     * @return array
+     */
     public static function randSpecial(int $len): array
     {
         $specialChars = ['@','%','!', '?', '*', '^', '&'];
@@ -86,6 +93,13 @@ class PasswordGen
         return $return;
     }
 
+    /**
+     * Generate array of numbers
+     *
+     * @param int $len
+     *
+     * @return array
+     */
     public static function randNumber(int $len): array
     {
         $digits = range(0, 9);
