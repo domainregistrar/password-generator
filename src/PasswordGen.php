@@ -23,7 +23,7 @@ class PasswordGen
                                     int $special = 2): string
     {
         // Validate to ensure able to meet requirements within the given length.
-        if($number + $special + (int)$upper + (int)$lower > $length)
+        if($number + $special + (int)$upper + (int)$lower > $length || $number + $special + (int)$upper + (int)$lower < $length)
         {
             throw new \LengthException("Insufficient length to fulfil password requirements.");
         }
@@ -51,11 +51,12 @@ class PasswordGen
             $password_arr[] = $range[array_rand($range, 1)];
         }
 
-        // Looping to enable multiples of same character also allows inclusion of more than 26 characters
-        for($i = 0; $i < $requiredAlpha; $i++)
-        {
-            $rand_char = array_rand($chars, 1);
-            $password_arr[] = $chars[$rand_char];
+        if($upper || $lower) {
+            // Looping to enable multiples of same character also allows inclusion of more than 26 characters
+            for ($i = 0; $i < $requiredAlpha; $i++) {
+                $rand_char = array_rand($chars, 1);
+                $password_arr[] = $chars[$rand_char];
+            }
         }
 
         $special_chars = self::randSpecial($special);
