@@ -23,7 +23,11 @@ class PasswordGen
                                     int $special = 2): string
     {
         // Validate to ensure able to meet requirements within the given length.
-        if($number + $special + (int)$upper + (int)$lower > $length || $number + $special + (int)$upper + (int)$lower < $length)
+        if($number + $special + (int)$upper + (int)$lower > $length)
+        {
+            throw new \LengthException("Insufficient length to fulfil password requirements.");
+        }
+        if($number + $special < $length && !$upper && !$lower)
         {
             throw new \LengthException("Insufficient length to fulfil password requirements.");
         }
